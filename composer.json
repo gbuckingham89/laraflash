@@ -1,0 +1,29 @@
+{
+  "name": "gbuckingham89/laraflash",
+  "type": "library",
+  "description": "A package for handling flash messages / notifications in Laravel.",
+  "keywords": ["Laravel", "Flash", "Messages", "Notifications", "PHP"],
+  "homepage": "https://github.com/gbuckingham89/laraflash",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "George Buckingham",
+      "email": "george@georgebuckingham.com",
+      "homepage": "https://www.georgebuckingham.com",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/gbuckingham89/laraflash/issues",
+    "source": "https://github.com/gbuckingham89/laraflash"
+  },
+  "require": {
+    "illuminate/session": "^5.2",
+    "illuminate/support": "^5.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Gbuckingham89\\Laraflash\\": "src/"
+    }
+  }
+}
