@@ -8,6 +8,7 @@ use Illuminate\Session\Store;
  */
 class LaravelSessionStorage implements SessionStorage
 {
+
     /**
      * @var \Illuminate\Session\Store
      */
@@ -23,12 +24,22 @@ class LaravelSessionStorage implements SessionStorage
         $this->session = $session;
     }
 
-    /**
-     * @param string $key
-     * @param string $value
-     */
-    public function flash($key, $value)
-    {
-        $this->session->flash($key, $value);
-    }
+	/**
+	 * @param string $key
+	 * @param string $value
+	 */
+	public function flash($key, $value)
+	{
+		$this->session->flash($key, $value);
+	}
+
+	/**
+	 * @param string $key
+	 * @param null   $default
+	 */
+	public function get($key, $default=null)
+	{
+		$this->session->get($key, $default);
+	}
+
 }

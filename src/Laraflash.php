@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Facade;
  */
 class Laraflash extends Facade
 {
+
     /**
      * @return string
      */
@@ -17,4 +18,5 @@ class Laraflash extends Facade
     {
         return 'laraflash';
     }
+
 }

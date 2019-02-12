@@ -10,6 +10,7 @@ use Illuminate\Support\ServiceProvider;
  */
 class LaraflashServiceProvider extends ServiceProvider
 {
+
     /**
      * Register the service provider.
      *
@@ -39,4 +40,5 @@ class LaraflashServiceProvider extends ServiceProvider
             __DIR__ . '/../views' => base_path('resources/views/vendor/laraflash')
         ]);
     }
+
 }

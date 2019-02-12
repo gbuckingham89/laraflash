@@ -8,6 +8,7 @@ namespace Gbuckingham89\Laraflash;
  */
 class LaraflashService
 {
+
     /**
      * @var \Gbuckingham89\Laraflash\SessionStorage
      */
@@ -23,11 +24,21 @@ class LaraflashService
         $this->session = $session;
     }
 
+	/**
+	 * @return \Gbuckingham89\Laraflash\LaraflashService
+	 */
+	public function reflash()
+    {
+	    $this->session->flash('laraflash.message', $this->session->get('laraflash.message'));
+	    $this->session->flash('laraflash.level', $this->session->get('laraflash.level'));
+	    return $this;
+    }
+
     /**
      * @param string $message
      * @param string $level
      *
-     * @return $this
+     * @return \Gbuckingham89\Laraflash\LaraflashService
      */
     public function flash($message, $level)
     {
@@ -75,4 +86,5 @@ class LaraflashService
     {
         return $this->flash($message, 'danger');
     }
+
 }
