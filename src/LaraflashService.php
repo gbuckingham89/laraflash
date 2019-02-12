@@ -29,8 +29,8 @@ class LaraflashService
 	 */
 	public function reflash()
     {
-	    $this->session->flash('laraflash.message', $this->session->get('laraflash.message'));
-	    $this->session->flash('laraflash.level', $this->session->get('laraflash.level'));
+	    $this->session->reflash();
+
 	    return $this;
     }
 
@@ -44,6 +44,7 @@ class LaraflashService
     {
         $this->session->flash('laraflash.message', $message);
         $this->session->flash('laraflash.level', $level);
+
         return $this;
     }
 

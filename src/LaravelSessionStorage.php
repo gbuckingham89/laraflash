@@ -25,6 +25,8 @@ class LaravelSessionStorage implements SessionStorage
     }
 
 	/**
+	 * Flash a value to the session
+	 *
 	 * @param string $key
 	 * @param string $value
 	 */
@@ -34,12 +36,22 @@ class LaravelSessionStorage implements SessionStorage
 	}
 
 	/**
+	 * Get a value from the session
+	 *
 	 * @param string $key
 	 * @param null   $default
 	 */
 	public function get($key, $default=null)
 	{
 		$this->session->get($key, $default);
+	}
+
+	/**
+	 * Reflash data in the session
+	 */
+	public function reflash()
+	{
+		$this->session->reflash();
 	}
 
 }

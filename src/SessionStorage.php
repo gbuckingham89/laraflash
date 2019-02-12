@@ -23,4 +23,9 @@ interface SessionStorage
 	 */
 	public function get($key, $default=null);
 
+	/**
+	 * @return void
+	 */
+	public function reflash();
+
 }
