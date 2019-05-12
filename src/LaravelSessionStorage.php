@@ -1,4 +1,6 @@
-<?php namespace Gbuckingham89\Laraflash;
+<?php
+
+namespace Gbuckingham89\Laraflash;
 
 use Illuminate\Session\Store;
 

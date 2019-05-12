@@ -2,13 +2,13 @@
 
 namespace Gbuckingham89\Laraflash;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 /**
- * Class LaraflashServiceProvider
+ * Class ServiceProvider
  * @package Gbuckingham89\Laraflash
  */
-class LaraflashServiceProvider extends ServiceProvider
+class ServiceProvider extends BaseServiceProvider
 {
 
     /**
@@ -24,7 +24,7 @@ class LaraflashServiceProvider extends ServiceProvider
         );
 
         $this->app->singleton('laraflash', function () {
-            return $this->app->make(LaraflashService::class);
+            return $this->app->make(Laraflash::class);
         });
     }
 

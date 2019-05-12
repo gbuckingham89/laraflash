@@ -25,5 +25,15 @@
     "psr-4": {
       "Gbuckingham89\\Laraflash\\": "src/"
     }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Gbuckingham89\\Laraflash\\ServiceProvider"
+      ],
+      "aliases": {
+        "Laraflash": "Gbuckingham89\\Laraflash\\Facade"
+      }
+    }
   }
 }
