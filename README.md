@@ -1,8 +1,8 @@
-# gbuckingham89/laraflash v3.3.0
+# gbuckingham89/laraflash v4.0.0
 
 A simple package for handling flash messages / notifications in Laravel. Written to suit my needs - but hopefully someone else will find it useful too.
 
-The current version requires Laravel 5.6 (PHP 7.1) or greater. [Version 2.0.0](https://github.com/gbuckingham89/laraflash/tree/2.0.0) supports earlier 5.* versions. The levels of priority for messages and included view file are optimised for use with [Bootstrap 3](http://www.getbootstrap.com).
+The current version requires Laravel 7.0 (PHP 7.4) or greater. If you have a project that requires a lower version of PHP or Laravel, check the requirements of the older releases.
 
 ## Installation
 
@@ -18,7 +18,7 @@ For the service provider, add the following to the `providers` array in your `ap
 
 For the facade, add the following to the `aliases` array in your `app.php` config file:
 
-    'Laraflash' => Gbuckingham89\Laraflash\Facade::class
+    'Laraflash' => Gbuckingham89\Laraflash\Facade\Laraflash::class
 
 Finally, you'll need to publish the view file (unless you want to roll your own). Do this by running this command in your terminal:
 

@@ -2,17 +2,13 @@
 
 namespace Gbuckingham89\Laraflash;
 
-/**
- * Class Laraflash
- * @package Gbuckingham89\Laraflash
- */
 class Laraflash
 {
 
     /**
      * @var \Gbuckingham89\Laraflash\SessionStorage
      */
-    private $session;
+    private SessionStorage $session;
 
     /**
      * Laraflash constructor.
@@ -24,10 +20,10 @@ class Laraflash
         $this->session = $session;
     }
 
-	/**
-	 * @return \Gbuckingham89\Laraflash\Laraflash
-	 */
-	public function reflash()
+    /**
+     * @return $this
+     */
+    public function reflash(): self
     {
 	    $this->session->reflash();
 
@@ -38,9 +34,9 @@ class Laraflash
      * @param string $message
      * @param string $level
      *
-     * @return \Gbuckingham89\Laraflash\Laraflash
+     * @return $this
      */
-    public function flash($message, $level)
+    public function flash(string $message, string $level): self
     {
         $this->session->flash('laraflash.message', $message);
         $this->session->flash('laraflash.level', $level);
@@ -51,9 +47,9 @@ class Laraflash
     /**
      * @param string $message
      *
-     * @return \Gbuckingham89\Laraflash\Laraflash
+     * @return $this
      */
-    public function success($message)
+    public function success(string $message) :self
     {
         return $this->flash($message, 'success');
     }
@@ -61,9 +57,9 @@ class Laraflash
     /**
      * @param string $message
      *
-     * @return \Gbuckingham89\Laraflash\Laraflash
+     * @return $this
      */
-    public function info($message)
+    public function info(string $message): self
     {
         return $this->flash($message, 'info');
     }
@@ -71,9 +67,9 @@ class Laraflash
     /**
      * @param string $message
      *
-     * @return \Gbuckingham89\Laraflash\Laraflash
+     * @return $this
      */
-    public function warning($message)
+    public function warning(string $message): self
     {
         return $this->flash($message, 'warning');
     }
@@ -81,9 +77,9 @@ class Laraflash
     /**
      * @param string $message
      *
-     * @return \Gbuckingham89\Laraflash\Laraflash
+     * @return $this
      */
-    public function danger($message)
+    public function danger(string $message): self
     {
         return $this->flash($message, 'danger');
     }

@@ -4,10 +4,6 @@ namespace Gbuckingham89\Laraflash;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
-/**
- * Class ServiceProvider
- * @package Gbuckingham89\Laraflash
- */
 class ServiceProvider extends BaseServiceProvider
 {
 
@@ -16,7 +12,7 @@ class ServiceProvider extends BaseServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->app->bind(
             SessionStorage::class,
@@ -33,7 +29,7 @@ class ServiceProvider extends BaseServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->loadViewsFrom(__DIR__ . '/../views', 'laraflash');
         $this->publishes([

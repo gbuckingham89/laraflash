@@ -4,17 +4,13 @@ namespace Gbuckingham89\Laraflash;
 
 use Illuminate\Session\Store;
 
-/**
- * Class LaravelSessionStorage
- * @package Gbuckingham89\Laraflash
- */
 class LaravelSessionStorage implements SessionStorage
 {
 
     /**
      * @var \Illuminate\Session\Store
      */
-    private $session;
+    private Store $session;
 
     /**
      * LaravelSessionStorage constructor.
@@ -30,9 +26,11 @@ class LaravelSessionStorage implements SessionStorage
 	 * Flash a value to the session
 	 *
 	 * @param string $key
-	 * @param string $value
+	 * @param mixed $value
+     *
+     * @return void
 	 */
-	public function flash($key, $value)
+	public function flash(string $key, $value=null): void
 	{
 		$this->session->flash($key, $value);
 	}
@@ -41,17 +39,21 @@ class LaravelSessionStorage implements SessionStorage
 	 * Get a value from the session
 	 *
 	 * @param string $key
-	 * @param null   $default
+	 * @param mixed $default
+     *
+     * @return void
 	 */
-	public function get($key, $default=null)
+	public function get(string $key, $default=null): void
 	{
 		$this->session->get($key, $default);
 	}
 
 	/**
 	 * Reflash data in the session
+     *
+     * @return void
 	 */
-	public function reflash()
+	public function reflash(): void
 	{
 		$this->session->reflash();
 	}

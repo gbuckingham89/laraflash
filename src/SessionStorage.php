@@ -2,30 +2,28 @@
 
 namespace Gbuckingham89\Laraflash;
 
-/**
- * Interface SessionStorage
- * @package Gbuckingham89\Laraflash
- */
 interface SessionStorage
 {
 
     /**
      * @param string $key
-     * @param string $value
+     * @param mixed $value
+     *
+     * @return void
      */
-    public function flash($key, $value);
+    public function flash(string $key, $value=null): void;
 
-	/**
-	 * @param string $key
-	 * @param null   $default
-	 *
-	 * @return mixed
-	 */
-	public function get($key, $default=null);
+    /**
+     * @param string $key
+     * @param mixed $default
+     *
+     * @return void
+     */
+    public function get(string $key, $default=null): void;
 
-	/**
-	 * @return void
-	 */
-	public function reflash();
+    /**
+     * @return void
+     */
+    public function reflash(): void;
 
 }
