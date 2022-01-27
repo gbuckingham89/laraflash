@@ -1,4 +1,4 @@
-# gbuckingham89/laraflash v4.0.0
+# gbuckingham89/laraflash v4.x
 
 A simple package for handling flash messages / notifications in Laravel. Written to suit my needs - but hopefully someone else will find it useful too.
 
