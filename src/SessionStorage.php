@@ -11,7 +11,7 @@ interface SessionStorage
      *
      * @return void
      */
-    public function flash(string $key, $value=null): void;
+    public function flash(string $key, mixed $value = null): void;
 
     /**
      * @param string $key
@@ -19,7 +19,7 @@ interface SessionStorage
      *
      * @return void
      */
-    public function get(string $key, $default=null): void;
+    public function get(string $key, mixed $default = null): void;
 
     /**
      * @return void

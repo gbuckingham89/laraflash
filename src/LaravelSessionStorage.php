@@ -6,20 +6,19 @@ use Illuminate\Session\Store;
 
 class LaravelSessionStorage implements SessionStorage
 {
-
     /**
      * @var \Illuminate\Session\Store
      */
-    private Store $session;
+    private Store $sessionStore;
 
     /**
      * LaravelSessionStorage constructor.
      *
-     * @param \Illuminate\Session\Store $session
+     * @param \Illuminate\Session\Store $sessionStore
      */
-    function __construct(Store $session)
+    function __construct(Store $sessionStore)
     {
-        $this->session = $session;
+        $this->sessionStore = $sessionStore;
     }
 
 	/**
@@ -30,9 +29,9 @@ class LaravelSessionStorage implements SessionStorage
      *
      * @return void
 	 */
-	public function flash(string $key, $value=null): void
+	public function flash(string $key, mixed $value = null): void
 	{
-		$this->session->flash($key, $value);
+		$this->sessionStore->flash($key, $value);
 	}
 
 	/**
@@ -43,9 +42,9 @@ class LaravelSessionStorage implements SessionStorage
      *
      * @return void
 	 */
-	public function get(string $key, $default=null): void
+	public function get(string $key, mixed $default = null): void
 	{
-		$this->session->get($key, $default);
+		$this->sessionStore->get($key, $default);
 	}
 
 	/**
@@ -55,7 +54,6 @@ class LaravelSessionStorage implements SessionStorage
 	 */
 	public function reflash(): void
 	{
-		$this->session->reflash();
+		$this->sessionStore->reflash();
 	}
-
 }
