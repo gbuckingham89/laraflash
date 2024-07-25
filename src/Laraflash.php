@@ -2,9 +2,10 @@
 
 namespace Gbuckingham89\Laraflash;
 
+use Illuminate\Support\HtmlString;
+
 class Laraflash
 {
-
     /**
      * @var \Gbuckingham89\Laraflash\SessionStorage
      */
@@ -31,12 +32,12 @@ class Laraflash
     }
 
     /**
-     * @param string $message
+     * @param string|HtmlString $message
      * @param string $level
      *
      * @return $this
      */
-    public function flash(string $message, string $level): self
+    public function flash(string|HtmlString $message, string $level): self
     {
         $this->session->flash('laraflash.message', $message);
         $this->session->flash('laraflash.level', $level);
@@ -45,41 +46,41 @@ class Laraflash
     }
 
     /**
-     * @param string $message
+     * @param string|HtmlString $message
      *
      * @return $this
      */
-    public function success(string $message) :self
+    public function success(string|HtmlString $message) :self
     {
         return $this->flash($message, 'success');
     }
 
     /**
-     * @param string $message
+     * @param string|HtmlString $message
      *
      * @return $this
      */
-    public function info(string $message): self
+    public function info(string|HtmlString $message): self
     {
         return $this->flash($message, 'info');
     }
 
     /**
-     * @param string $message
+     * @param string|HtmlString $message
      *
      * @return $this
      */
-    public function warning(string $message): self
+    public function warning(string|HtmlString $message): self
     {
         return $this->flash($message, 'warning');
     }
 
     /**
-     * @param string $message
+     * @param string|HtmlString $message
      *
      * @return $this
      */
-    public function danger(string $message): self
+    public function danger(string|HtmlString $message): self
     {
         return $this->flash($message, 'danger');
     }
