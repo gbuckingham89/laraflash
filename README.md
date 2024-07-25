@@ -1,8 +1,8 @@
-# gbuckingham89/laraflash v4.x
+# gbuckingham89/laraflash v5.x
 
 A simple package for handling flash messages / notifications in Laravel. Written to suit my needs - but hopefully someone else will find it useful too.
 
-The current version requires Laravel 7.0 (PHP 7.4) or greater. If you have a project that requires a lower version of PHP or Laravel, check the requirements of the older releases.
+The current version requires Laravel 7.0 & PHP 8.0 or greater. If you have a project that requires a lower version of PHP or Laravel, check the requirements of the older releases.
 
 ## Installation
 
